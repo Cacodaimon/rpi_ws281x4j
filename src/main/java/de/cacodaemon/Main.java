@@ -5,6 +5,10 @@ import de.cacodaemon.rpiws28114j.StripType;
 import de.cacodaemon.rpiws28114j.WS2811;
 import de.cacodaemon.rpiws28114j.WS2811Channel;
 
+/**
+ * Only used for quick testing of the wrapper.
+ * Is not included in generated JAR.
+ */
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {

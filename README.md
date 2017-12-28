@@ -11,7 +11,7 @@ After compiling and linking a simple JAR gets packed.
 Tested with Raspbian stretch lite on a Raspberry PI 3.
 
 Use the `build-on-remote-pi.sh` script to build the library from your development pc on your Raspberry PI. 
-The JAR and the shared library gets copied on your PC after a successfully build.
+The JAR and the shared library gets copied on your dev PC after a successfully build.
 
 ## Usage
 

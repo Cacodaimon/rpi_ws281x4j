@@ -22,4 +22,4 @@ echo "Copy RpiWS281x4j.jar back to development PC"
 scp "$RASPBERRY_PI":$BUILD_DIR/src/main/java/RpiWS281x4j.jar .
 
 echo "Extract librpiws28114j.so from jar"
-unzip -p RpiWS281x4j.jar de/cacodaemon/rpiws281X4j/librpiws281X4j.so  > librpiws281X4j.so
+unzip -p RpiWS281x4j.jar de/cacodaemon/rpiws28114j/librpiws28114j.so  > librpiws28114j.so

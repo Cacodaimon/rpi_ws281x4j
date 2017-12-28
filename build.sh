@@ -10,26 +10,21 @@ echo "Generate C header file"
 cd "$SCRIPT_PATH/src/main/java/"
 javah -d ../c/ de.cacodaemon.rpiws28114j.WS2811
 
-if [ ! -d "$SCRIPT_PATH/tmp/" ]; then
-  mkdir "$SCRIPT_PATH/tmp/"
-fi
-
-if [ ! -d "$SCRIPT_PATH/tmp/rpi_ws281x" ]; then
-  echo "Clone jgarff/rpi_ws281x.git into tmp"
-  cd "$SCRIPT_PATH/tmp/"
+if [ ! -d "/tmp/rpi_ws281x" ]; then
+  echo "Clone jgarff/rpi_ws281x.git into /tmp"
+  cd /tmp/
   git clone https://github.com/jgarff/rpi_ws281x.git
 fi
-pwd
 
 echo "CP rpi_ws281x files to src/min/c"
-cp "$SCRIPT_PATH"/tmp/rpi_ws281x/clk.* "$SCRIPT_PATH/src/main/c/"
-cp "$SCRIPT_PATH"/tmp/rpi_ws281x/dma.* "$SCRIPT_PATH/src/main/c/"
-cp "$SCRIPT_PATH"/tmp/rpi_ws281x/gpio.* "$SCRIPT_PATH/src/main/c/"
-cp "$SCRIPT_PATH"/tmp/rpi_ws281x/mailbox.* "$SCRIPT_PATH/src/main/c/"
-cp "$SCRIPT_PATH"/tmp/rpi_ws281x/pcm.* "$SCRIPT_PATH/src/main/c/"
-cp "$SCRIPT_PATH"/tmp/rpi_ws281x/pwm.* "$SCRIPT_PATH/src/main/c/"
-cp "$SCRIPT_PATH"/tmp/rpi_ws281x/rpihw.* "$SCRIPT_PATH/src/main/c/"
-cp "$SCRIPT_PATH"/tmp/rpi_ws281x/ws2811.* "$SCRIPT_PATH/src/main/c/"
+cp /tmp/rpi_ws281x/clk.* "$SCRIPT_PATH/src/main/c/"
+cp /tmp/rpi_ws281x/dma.* "$SCRIPT_PATH/src/main/c/"
+cp /tmp/rpi_ws281x/gpio.* "$SCRIPT_PATH/src/main/c/"
+cp /tmp/rpi_ws281x/mailbox.* "$SCRIPT_PATH/src/main/c/"
+cp /tmp/rpi_ws281x/pcm.* "$SCRIPT_PATH/src/main/c/"
+cp /tmp/rpi_ws281x/pwm.* "$SCRIPT_PATH/src/main/c/"
+cp /tmp/rpi_ws281x/rpihw.* "$SCRIPT_PATH/src/main/c/"
+cp /tmp/rpi_ws281x/ws2811.* "$SCRIPT_PATH/src/main/c/"
 
 echo "Compile rpi_ws281x files"
 cd "$SCRIPT_PATH/src/main/c/"
@@ -58,5 +53,6 @@ cd "$SCRIPT_PATH/src/main/java/"
 sudo java -Djava.library.path=de/cacodaemon/rpiws28114j/ de.cacodaemon.Main
 rm "$SCRIPT_PATH/src/main/java/de/cacodaemon/Main.class"
 
+echo "Pack to JAR"
 cd "$SCRIPT_PATH/src/main/java"
 jar cvf RpiWS281x4j.jar ./

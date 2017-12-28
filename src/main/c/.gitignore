@@ -1,0 +1,8 @@
+clk.*
+dma.*
+gpio.*
+mailbox.*
+pcm.*
+pwm.*
+rpihw.*
+ws2811.*

@@ -3,3 +3,4 @@
 tmp/*
 rpiws28114j.iml
 *.jar
+*.so
